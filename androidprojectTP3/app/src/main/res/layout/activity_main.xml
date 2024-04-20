@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="411dp"
+            android:layout_height="38dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.001">
+        <TextView
+                android:text="Reservation Hotel"
+                android:layout_width="210dp"
+                android:layout_height="100dp" android:id="@+id/textView" android:layout_weight="1"
+                android:textSize="24sp"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center" app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintVertical_bias="0.058">
+        <TextView
+                android:text="Name"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content" android:id="@+id/textName"
+                android:layout_marginRight="20dp"
+        />
+
+        <EditText
+                android:layout_width="172dp" android:layout_height="wrap_content"
+                android:id="@+id/editTextName"
+        />
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.174">
+        <TextView
+                android:text="Start"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content" android:id="@+id/textStart"
+                android:layout_marginRight="20dp"
+        />
+        <DatePicker
+                android:text="Name"
+                android:layout_width="235dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/datePickerStart"
+                android:layout_marginRight="20dp"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+        />
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="147dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center" app:layout_constraintHorizontal_bias="0.444"
+            app:layout_constraintVertical_bias="0.416">
+        <TextView
+                android:text="End"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content" android:id="@+id/textEnd"
+                android:layout_marginRight="20dp"
+        />
+        <DatePicker
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/datePickerEnd"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+        />
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.594">
+        <TextView
+                android:text="Nb Chambres"
+                android:layout_width="66dp"
+                android:layout_height="36dp" android:id="@+id/textChamber"
+                android:layout_marginRight="10dp"
+        />
+        <EditText
+                android:text="@{viewModel.seekBar.Value.toString()"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" android:id="@+id/seekBarValue"
+                android:inputType="none"
+        />
+        <SeekBar
+                android:layout_width="239dp"
+                android:min="1"
+                android:max="3"
+                android:layout_height="wrap_content"
+                android:id="@+id/seekBar"
+        />
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.692">
+        <TextView
+                android:text="Pension"
+                android:layout_width="67dp"
+                android:layout_height="wrap_content" android:id="@+id/textPension"
+                android:layout_marginRight="10dp"
+        />
+        <Spinner
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerPension"
+        />
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="154dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.908">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="100dp"
+                android:layout_height="154dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:gravity="center" app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintVertical_bias="0.908">
+            <TextView
+                    android:text="Chambre 1"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content" android:id="@+id/textChamber1"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="30dp"
+            />
+            <TextView
+                    android:text="Chambre 2"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content" android:id="@+id/textChamber2"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="20dp"
+
+            />
+            <TextView
+                    android:text="Chambre 3"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content" android:id="@+id/textChamber3"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="20dp"
+            />
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="300dp"
+                android:layout_height="154dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:gravity="center" app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintVertical_bias="0.908"
+                android:id="@+id/spinnerSelectionLayout">
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:gravity="center" app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintVertical_bias="0.908">
+                <TextView
+                        android:text="Adulte"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" android:id="@+id/textAdulte"
+                />
+                <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spAd1"
+                        android:layout_marginTop="5dp"
+                />
+                <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spAd2"
+                        android:layout_marginTop="15dp"
+                />
+                <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spAd3"
+                        android:layout_marginTop="15dp"
+                />
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:gravity="center" app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintVertical_bias="0.908">
+                <TextView
+                        android:text="Enfant"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" android:id="@+id/textEnfant"
+                />
+                <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spEnf1"
+                        android:layout_marginTop="5dp"
+                />
+                <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spEnf2"
+                        android:layout_marginTop="15dp"
+                />
+                <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spEnf3"
+                        android:layout_marginTop="15dp"
+                />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="1.0">
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/btnValidate"
+                android:text="Valider"
+        />
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="13dp"
+                android:text=""
+                android:id="@+id/textViewResult"
+        />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
